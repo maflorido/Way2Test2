@@ -26,6 +26,12 @@ namespace GitApi.Web
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/repositoriosIndex").Include(
+                      "~/Scripts/views/repositorios/index.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/framework").Include(
+                      "~/Scripts/views/framework.js"));
         }
     }
 }
