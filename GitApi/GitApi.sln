@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitApi.Web", "GitApi.Web\GitApi.Web.csproj", "{B5A7FEEE-E301-4491-ACA3-0E8D85FBF7F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitApi.Tests", "GitApi.Tests\GitApi.Tests.csproj", "{8CA6EBBF-657B-497A-BEEF-6A6F580D4DED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitApi.Domain", "GitApi.Domain\GitApi.Domain.csproj", "{A44A55FF-232C-43D7-B9E0-5C6D29E7315E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5A7FEEE-E301-4491-ACA3-0E8D85FBF7F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5A7FEEE-E301-4491-ACA3-0E8D85FBF7F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5A7FEEE-E301-4491-ACA3-0E8D85FBF7F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5A7FEEE-E301-4491-ACA3-0E8D85FBF7F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CA6EBBF-657B-497A-BEEF-6A6F580D4DED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CA6EBBF-657B-497A-BEEF-6A6F580D4DED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CA6EBBF-657B-497A-BEEF-6A6F580D4DED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CA6EBBF-657B-497A-BEEF-6A6F580D4DED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A44A55FF-232C-43D7-B9E0-5C6D29E7315E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A44A55FF-232C-43D7-B9E0-5C6D29E7315E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A44A55FF-232C-43D7-B9E0-5C6D29E7315E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A44A55FF-232C-43D7-B9E0-5C6D29E7315E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
