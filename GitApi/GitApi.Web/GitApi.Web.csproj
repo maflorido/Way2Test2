@@ -133,6 +133,9 @@
     <Compile Include="Controllers\RepositoriosController.cs" />
     <Compile Include="GitRepositorios\GitClient.cs" />
     <Compile Include="GitRepositorios\GitRepositoriosConfig.cs" />
+    <Compile Include="GitRepositorios\Response\Error\ErrorResponse.cs" />
+    <Compile Include="GitRepositorios\Response\Owner.cs" />
+    <Compile Include="GitRepositorios\Response\RepositoriosResponse.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

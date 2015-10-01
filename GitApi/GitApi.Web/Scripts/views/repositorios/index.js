@@ -2,11 +2,15 @@
     var doc = $(document);
 
     doc.click("#btnLstRepo", function () {
-        var ajax = new Framework.Post("/Repositorios/ObterRepositoriosUsuario");
+        //var ajax = new Framework.Post("/Repositorios/ObterRepositoriosUsuario");
 
-        ajax.success(function (pData, pTextStatus, pJqXHR)
-        {
-            alert('sucesso');
+        //ajax.success(function (pData, pTextStatus, pJqXHR)
+        //{
+        //    alert('sucesso');
+        //});
+
+        $.post("/Repositorios/ObterRepositoriosUsuario").success(function (data) {
+            alert('a');
         });
     });
 });

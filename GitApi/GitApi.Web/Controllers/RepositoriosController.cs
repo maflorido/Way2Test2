@@ -24,7 +24,8 @@ namespace GitApi.Web.Controllers
 
         public async Task<ActionResult> ObterRepositoriosUsuario()
         {
-            gitClient.ObterRepositoriosUsuario();
+            var retorno = await gitClient.ObterRepositoriosUsuario();
+            
             return View("Index");
         }
     }
