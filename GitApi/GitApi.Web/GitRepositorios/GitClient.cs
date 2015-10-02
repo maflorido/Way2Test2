@@ -39,6 +39,58 @@ namespace GitApi.Web.GitRepositorios
             
         }
 
+        internal async Task<IList<RepositoriosResponse>> ObterRepositoriosPorNome(string nomeRepositorio)
+        {
+            try
+            {
+                var client = GetClient();
+                var response = await client.GetAsync(string.Format(GitRepositoriosConfig.UrlRepositoriosPorNome, nomeRepositorio));
+                string retorno = null;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    retorno = await response.Content.ReadAsStringAsync();
+                    return await JsonConvert.DeserializeObjectAsync<IList<RepositoriosResponse>>(retorno);
+                }
+
+                retorno = await response.Content.ReadAsStringAsync();
+                ErrorResponse erro = JsonConvert.DeserializeObjectAsync<ErrorResponse>(retorno).Result;
+
+                throw new Exception(erro.Message);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        internal async Task<IList<RepositoriosResponse>> ObterContrinuidoresRepositorio(string owner, string nomeRepositorio)
+        {
+            try
+            {
+                var client = GetClient();
+                var response = await client.GetAsync(string.Format(GitRepositoriosConfig.UrlContribuidores, owner, nomeRepositorio));
+                string retorno = null;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    retorno = await response.Content.ReadAsStringAsync();
+                    return await JsonConvert.DeserializeObjectAsync<IList<RepositoriosResponse>>(retorno);
+                }
+
+                retorno = await response.Content.ReadAsStringAsync();
+                ErrorResponse erro = JsonConvert.DeserializeObjectAsync<ErrorResponse>(retorno).Result;
+
+                throw new Exception(erro.Message);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
         private static HttpClient GetClient()
         {
             var client = new HttpClient()

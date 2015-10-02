@@ -12,5 +12,9 @@ namespace GitApi.Web.GitRepositorios
         public static string Url => "https://api.github.com";
 
         public static string UrlRepositoriosUsuario => string.Format("users/{0}/repos", NomeUsuario);
+
+        public static string UrlRepositoriosPorNome => "search/repositories?q={0}";
+
+        public static string UrlContribuidores => "repos/{0}/{1}/contributors";        
     }
 }
