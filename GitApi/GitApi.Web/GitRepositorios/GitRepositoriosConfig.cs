@@ -15,6 +15,6 @@ namespace GitApi.Web.GitRepositorios
 
         public static string UrlRepositoriosPorNome => "search/repositories?q={0}";
 
-        public static string UrlContribuidores => "repos/{0}/{1}/contributors";        
+        public static string UrlColaboradores => "repos/{0}/{1}/contributors";        
     }
 }

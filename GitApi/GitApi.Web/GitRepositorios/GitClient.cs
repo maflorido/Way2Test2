@@ -65,12 +65,12 @@ namespace GitApi.Web.GitRepositorios
 
         }
 
-        internal async Task<IList<RepositoriosResponse>> ObterContrinuidoresRepositorio(string owner, string nomeRepositorio)
+        internal async Task<IList<RepositoriosResponse>> ObterColaboradoresRepositorio(string owner, string nomeRepositorio)
         {
             try
             {
                 var client = GetClient();
-                var response = await client.GetAsync(string.Format(GitRepositoriosConfig.UrlContribuidores, owner, nomeRepositorio));
+                var response = await client.GetAsync(string.Format(GitRepositoriosConfig.UrlColaboradores, owner, nomeRepositorio));
                 string retorno = null;
 
                 if (response.IsSuccessStatusCode)
