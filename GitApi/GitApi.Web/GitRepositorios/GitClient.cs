@@ -14,7 +14,7 @@ namespace GitApi.Web.GitRepositorios
 {
     public class GitClient
     {
-        internal async Task<IList<RepositoriosResponse>> ObterRepositoriosUsuario()
+        public async Task<IList<RepositoriosResponse>> ObterRepositoriosUsuario()
         {
             try
             {
@@ -44,7 +44,7 @@ namespace GitApi.Web.GitRepositorios
             
         }
 
-        internal async Task<IList<RepositoriosResponse>> ObterRepositoriosPorNome(string nomeRepositorio)
+        public async Task<IList<RepositoriosResponse>> ObterRepositoriosPorNome(string nomeRepositorio)
         {
             try
             {
@@ -74,7 +74,7 @@ namespace GitApi.Web.GitRepositorios
 
         }
 
-        internal async Task<RepositoriosResponse> ObterRepositorioPorNome(string nomeRepositorio)
+        public async Task<RepositoriosResponse> ObterRepositorioPorNome(string nomeRepositorio)
         {
             try
             {
@@ -104,7 +104,7 @@ namespace GitApi.Web.GitRepositorios
 
         }
 
-        internal async Task<IList<ColaboradoresResponse>> ObterColaboradoresRepositorio(string owner, string nomeRepositorio)
+        public async Task<IList<ColaboradoresResponse>> ObterColaboradoresRepositorio(string owner, string nomeRepositorio)
         {
             try
             {
@@ -143,6 +143,8 @@ namespace GitApi.Web.GitRepositorios
 
             client.DefaultRequestHeaders.Accept.ParseAdd("application/vnd.github.v3+json");
             client.DefaultRequestHeaders.UserAgent.ParseAdd("Repos");
+
+            GitRepositoriosConfig.NomeUsuario= "maflorido";
 
             return client;
         }

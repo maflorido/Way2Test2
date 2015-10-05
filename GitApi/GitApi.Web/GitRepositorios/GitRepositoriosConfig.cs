@@ -7,7 +7,7 @@ namespace GitApi.Web.GitRepositorios
 {
     public class GitRepositoriosConfig
     {
-        public static string NomeUsuario => "maflorido";
+        public static string NomeUsuario { get; set; }
 
         public static string Url => "https://api.github.com";
 
