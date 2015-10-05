@@ -1,4 +1,5 @@
-﻿using GitApi.Web.GitRepositorios.Response;
+﻿using GitApi.Web.Exceptions;
+using GitApi.Web.GitRepositorios.Response;
 using GitApi.Web.GitRepositorios.Response.Error;
 using Newtonsoft.Json;
 using System;
@@ -30,9 +31,13 @@ namespace GitApi.Web.GitRepositorios
                 retorno = await response.Content.ReadAsStringAsync();
                 ErrorResponse erro = JsonConvert.DeserializeObjectAsync<ErrorResponse>(retorno).Result;
 
-                throw new Exception(erro.Message);
+                throw new ObterRepositoriosUsuarioException(erro.Message);
             }
-            catch(Exception ex)
+            catch (ObterRepositoriosUsuarioException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -56,7 +61,11 @@ namespace GitApi.Web.GitRepositorios
                 retorno = await response.Content.ReadAsStringAsync();
                 ErrorResponse erro = JsonConvert.DeserializeObjectAsync<ErrorResponse>(retorno).Result;
 
-                throw new Exception(erro.Message);
+                throw new ObterPorNomeException(erro.Message);
+            }
+            catch (ObterPorNomeException ex)
+            {
+                throw ex;
             }
             catch (Exception ex)
             {
@@ -82,7 +91,11 @@ namespace GitApi.Web.GitRepositorios
                 retorno = await response.Content.ReadAsStringAsync();
                 ErrorResponse erro = JsonConvert.DeserializeObjectAsync<ErrorResponse>(retorno).Result;
 
-                throw new Exception(erro.Message);
+                throw new ObterPorNomeException(erro.Message);
+            }
+            catch(ObterPorNomeException ex)
+            {
+                throw ex;
             }
             catch (Exception ex)
             {
@@ -108,7 +121,11 @@ namespace GitApi.Web.GitRepositorios
                 retorno = await response.Content.ReadAsStringAsync();
                 ErrorResponse erro = JsonConvert.DeserializeObjectAsync<ErrorResponse>(retorno).Result;
 
-                throw new Exception(erro.Message);
+                throw new ObterColaboradoresException(erro.Message);
+            }
+            catch(ObterColaboradoresException ex)
+            {
+                throw ex;
             }
             catch (Exception ex)
             {
