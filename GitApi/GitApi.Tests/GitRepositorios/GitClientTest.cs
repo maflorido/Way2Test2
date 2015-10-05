@@ -50,5 +50,48 @@ namespace GitApi.Tests.GitRepositorios
             var resultados = await client.ObterRepositoriosPorNome("Way2Test2asasasasasasa");
             
         }
+
+        [TestMethod]
+        public async void ObterRepositorioPorNomeSuccess_Test()
+        {
+            GitClient client = new GitClient();
+
+            var resultado = await client.ObterRepositorioPorNome("Way2Test2");
+
+            Assert.IsNotNull(resultado);
+            Assert.AreEqual(resultado.Owner.Login, "maflorido");
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ObterPorNomeException))]
+        public async void ObterRepositorioPorNomeErro_Test()
+        {
+            GitClient client = new GitClient();
+
+            var resultado = await client.ObterRepositorioPorNome("Way2Test2asasasasasasa");
+
+        }
+
+        [TestMethod]
+        public async void ObterColaboradoresRepositorioSuccess_Test()
+        {
+            GitClient client = new GitClient();
+
+            var resultado = await client.ObterColaboradoresRepositorio("maflorido", "Way2Test2");
+
+            Assert.IsNotNull(resultado);
+            Assert.AreEqual(resultado[0].Login, "maflorido");
+            Assert.AreEqual(1, resultado.Count);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ObterColaboradoresException))]
+        public async void ObterColaboradoresRepositorioErro_Test()
+        {
+            GitClient client = new GitClient();
+
+            var resultado = await client.ObterColaboradoresRepositorio("maflorido", "Way2Test2asasasasasasa");
+
+        }
     }
 }
