@@ -1,4 +1,5 @@
 ﻿using GitApi.Web.GitRepositorios;
+using GitApi.Web.ViewModels.Repositorios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +27,14 @@ namespace GitApi.Web.Controllers
         {
             var retorno = await gitClient.ObterRepositoriosUsuario();
             
-            return View("Index");
+            return View("_ListagemRepositorios", retorno);
+        }
+
+        public async Task<ActionResult> ObterRepositoriosNome(IndexViewModel model)
+        {
+            var retorno = await gitClient.ObterRepositoriosPorNome(model.NomeRepositorio);
+
+            return View("_ListagemRepositorios", retorno);
         }
     }
 }

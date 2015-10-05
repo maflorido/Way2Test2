@@ -1,16 +1,20 @@
 ﻿$(function () {
     var doc = $(document);
 
-    doc.click("#btnLstRepo", function () {
-        //var ajax = new Framework.Post("/Repositorios/ObterRepositoriosUsuario");
-
-        //ajax.success(function (pData, pTextStatus, pJqXHR)
-        //{
-        //    alert('sucesso');
-        //});
-
+    $("#btnLstRepo").click(function () {
         $.post("/Repositorios/ObterRepositoriosUsuario").success(function (data) {
-            alert('a');
+            $("#resultado").html(data);
         });
+    });
+
+    $("#btnBuscarNome").click(function () {
+        var campoNome= $("#NomeRepositorio");
+
+        if(campoNome.valid())
+        {            
+            $.post("/Repositorios/ObterRepositoriosNome", { NomeRepositorio: campoNome.val() }).success(function (data) {
+                $("#resultado").html(data);
+            });
+        }        
     });
 });

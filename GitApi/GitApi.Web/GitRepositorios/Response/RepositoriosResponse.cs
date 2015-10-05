@@ -3,7 +3,7 @@ using System;
 
 namespace GitApi.Web.GitRepositorios.Response
 {
-    internal class RepositoriosResponse
+    public class RepositoriosResponse
     {
         public int Id { get; set; }
 

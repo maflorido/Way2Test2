@@ -1,0 +1,27 @@
+﻿@using GitApi.Web.GitRepositorios.Response;
+
+@model IList<RepositoriosResponse>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id Repositório</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Linguagem</th>
+            <th>Data atualização</th>
+        </tr>
+    </thead>            
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Description</td>
+                <td>@item.Language</td>
+                <td>@item.UpdateDate</td>
+            </tr>
+        }
+    </tbody>
+</table>
