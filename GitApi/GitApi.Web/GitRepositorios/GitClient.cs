@@ -65,7 +65,33 @@ namespace GitApi.Web.GitRepositorios
 
         }
 
-        internal async Task<IList<RepositoriosResponse>> ObterColaboradoresRepositorio(string owner, string nomeRepositorio)
+        internal async Task<RepositoriosResponse> ObterRepositorioPorNome(string nomeRepositorio)
+        {
+            try
+            {
+                var client = GetClient();
+                var response = await client.GetAsync(string.Format(GitRepositoriosConfig.UrlRepositoriosPorNome, nomeRepositorio));
+                string retorno = null;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    retorno = await response.Content.ReadAsStringAsync();
+                    return await JsonConvert.DeserializeObjectAsync<RepositoriosResponse>(retorno);
+                }
+
+                retorno = await response.Content.ReadAsStringAsync();
+                ErrorResponse erro = JsonConvert.DeserializeObjectAsync<ErrorResponse>(retorno).Result;
+
+                throw new Exception(erro.Message);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        internal async Task<IList<ColaboradoresResponse>> ObterColaboradoresRepositorio(string owner, string nomeRepositorio)
         {
             try
             {
@@ -76,7 +102,7 @@ namespace GitApi.Web.GitRepositorios
                 if (response.IsSuccessStatusCode)
                 {
                     retorno = await response.Content.ReadAsStringAsync();
-                    return await JsonConvert.DeserializeObjectAsync<IList<RepositoriosResponse>>(retorno);
+                    return await JsonConvert.DeserializeObjectAsync<IList<ColaboradoresResponse>>(retorno);
                 }
 
                 retorno = await response.Content.ReadAsStringAsync();

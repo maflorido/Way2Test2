@@ -133,6 +133,7 @@
     <Compile Include="Controllers\RepositoriosController.cs" />
     <Compile Include="GitRepositorios\GitClient.cs" />
     <Compile Include="GitRepositorios\GitRepositoriosConfig.cs" />
+    <Compile Include="GitRepositorios\Response\ColaboradoresResponse.cs" />
     <Compile Include="GitRepositorios\Response\Error\ErrorResponse.cs" />
     <Compile Include="GitRepositorios\Response\Owner.cs" />
     <Compile Include="GitRepositorios\Response\RepositoriosResponse.cs" />
@@ -140,6 +141,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\Repositorios\DetalhesViewModel.cs" />
     <Compile Include="ViewModels\Repositorios\IndexViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -181,6 +183,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Repositorios\Index.cshtml" />
     <Content Include="Views\Repositorios\_ListagemRepositorios.cshtml" />
+    <Content Include="Views\Repositorios\_Detalhes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

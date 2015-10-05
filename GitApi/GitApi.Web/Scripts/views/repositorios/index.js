@@ -17,4 +17,12 @@
             });
         }        
     });
+
+    $("#detalhes-repositorio").click(function () {
+        var nomeRepo = $(this).data("repositorio");
+
+        $.post("/Repositorios/Detalhes", { nome: nomeRepo }).success(function (data) {
+            $("#resultado").html(data);
+        });
+    });
 });

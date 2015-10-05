@@ -15,13 +15,15 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>@item.Id</td>
-                <td>@item.Name</td>
-                <td>@item.Description</td>
-                <td>@item.Language</td>
-                <td>@item.UpdateDate</td>
-            </tr>
+            <a id="detalhes-repositorio" href="Javascript:;" data-repositorio="@item.Name">
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Description</td>
+                    <td>@item.Language</td>
+                    <td>@item.UpdateDate</td>
+                </tr>
+            </a>
         }
     </tbody>
 </table>
