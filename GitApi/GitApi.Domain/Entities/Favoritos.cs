@@ -8,5 +8,10 @@ namespace GitApi.Domain.Entities
 {
     public class Favoritos
     {
+        public int Id { get; set; }
+
+        public string NomeRepositorio { get; set; }
+
+        public int IdRepositorioGit { get; set; }
     }
 }

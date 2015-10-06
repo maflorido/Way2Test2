@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
+using GitApi.Data;
 using GitApi.Web.GitRepositorios;
 using System.Web.Mvc;
 
@@ -20,6 +21,7 @@ namespace GitApi.Web
 
             builder.RegisterType<GitRepositoriosConfig>().AsSelf();
             builder.RegisterType<GitClient>().AsSelf();
+            builder.RegisterType<UnitOfWork>().AsSelf().InstancePerHttpRequest();
 
             var container = builder.Build();
 

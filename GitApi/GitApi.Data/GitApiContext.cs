@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using GitApi.Domain.Entities;
+using System.Collections.Generic;
 using System.Data.Entity;
 
 namespace GitApi.Data
@@ -7,15 +8,14 @@ namespace GitApi.Data
     {
         public GitApiContext()
             : base("Contexto")
-        {
-            Database.SetInitializer<GitApiContext>(new GitApiDBInitializer());
+        {            
             this.Configuration.LazyLoadingEnabled = false;
             this.Configuration.ProxyCreationEnabled = true;
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<Produto>().ToTable("Produto");
+            modelBuilder.Entity<Favoritos>().ToTable("Favoritos");
             base.OnModelCreating(modelBuilder);
         }        
 

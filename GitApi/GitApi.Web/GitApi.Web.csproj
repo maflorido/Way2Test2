@@ -145,6 +145,7 @@
     <Compile Include="App_Start\DependencyResolverConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\FavoritosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RepositoriosController.cs" />
     <Compile Include="Exceptions\ObterColaboradoresException.cs" />
@@ -201,6 +202,7 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\views\framework.js" />
     <Content Include="Scripts\views\repositorios\index.js" />
+    <Content Include="Scripts\views\repositorios\repositorioDetalhes.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -225,6 +227,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Favoritos\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -233,6 +236,16 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GitApi.Domain\GitApi.Domain.csproj">
+      <Project>{545eb1f3-bab8-4a1c-ba7c-90ea62434135}</Project>
+      <Name>GitApi.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GitApi.Repository\GitApi.Repository.csproj">
+      <Project>{d4ffdee1-0736-4e9e-b279-e4ddae2a35d9}</Project>
+      <Name>GitApi.Repository</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
