@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("GitApi.Domain")]
+[assembly: AssemblyTitle("GitApi.Repository")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("GitApi.Domain")]
+[assembly: AssemblyProduct("GitApi.Repository")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("545eb1f3-bab8-4a1c-ba7c-90ea62434135")]
+[assembly: Guid("d4ffdee1-0736-4e9e-b279-e4ddae2a35d9")]
 
 // Version information for an assembly consists of the following four values:
 //
