@@ -1,5 +1,6 @@
 ﻿using GitApi.Data;
 using GitApi.Domain.Entities;
+using GitApi.Web.ViewModels.FavoritosModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,11 @@ namespace GitApi.Web.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            IList<Favoritos> favoritos = this.contexto.FavoritosRepository.Listar();
+
+            FavoritosListarViewModel viewModel = new FavoritosListarViewModel(favoritos);
+
+            return View(viewModel);
         }
 
         public JsonResult AdicionarFavorito(string nomeRepositorio, int idRepositorioGit)
