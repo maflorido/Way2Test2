@@ -24,25 +24,28 @@
     </div>
     <div class="form-group">
         <label>Data atualização do repositório</label>
-        <label>@Model.Repositorios.UpdateDate</label>
+        <label>@Model.Repositorios.UpdateDate.ToString("dd/MM/yyyy HH:mm:ss")</label>
     </div>
     <div class="form-group">
         <label>Dono do repositório</label>
         <label>@Model.Repositorios.Owner.Login</label>
     </div>
 
-    
-    @foreach (var item in Model.Colaboradores)
+
+ 
+    foreach (var item in Model.Colaboradores)
     {
         <ul>
             <li>login colaborador: @item.Login</li>
             <li>numero contribuições: @item.Contribuicoes</li>
         </ul>
-    }
-    
+    }        
     <div class="form-group">
         <button type="button" id="btn-favorito" data-id-repo="@Model.Repositorios.Id" data-nome-repo="@Model.Repositorios.Name">
             Marcar como favorito
         </button>
     </div>
 }
+@Scripts.Render("~/bundles/detalhes")
+
+

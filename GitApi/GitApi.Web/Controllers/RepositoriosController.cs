@@ -27,25 +27,32 @@ namespace GitApi.Web.Controllers
         {
             var retorno = await gitClient.ObterRepositoriosUsuario();
             
-            return View("_ListagemRepositorios", retorno);
+            return PartialView("_ListagemRepositorios", retorno);
         }
 
         public async Task<ActionResult> ObterRepositoriosNome(IndexViewModel model)
         {
             var retorno = await gitClient.ObterRepositoriosPorNome(model.NomeRepositorio);
 
-            return View("_ListagemRepositorios", retorno);
+            return PartialView("_ListagemRepositoriosNome", retorno);
         }
 
-        public async Task<ActionResult> Detalhes(string nome)
+        public async Task<ActionResult> Detalhes(string nome, string login)
         {
-            var repositorios = await gitClient.ObterRepositorioPorNome(nome);
+            try
+            {
+                var repositorios = await gitClient.ObterRepositorioPorNome(nome);
 
-            var colaboradores = await gitClient.ObterColaboradoresRepositorio(repositorios.Owner.Login, repositorios.Name);
+                var colaboradores = await gitClient.ObterColaboradoresRepositorio(login, nome);
 
-            DetalhesViewModel viewmodel = new DetalhesViewModel(colaboradores, repositorios);
+                DetalhesViewModel viewmodel = new DetalhesViewModel(colaboradores, repositorios.Items[0]);
 
-            return View("_Detalhes", viewmodel);
+                return PartialView("_Detalhes", viewmodel);
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

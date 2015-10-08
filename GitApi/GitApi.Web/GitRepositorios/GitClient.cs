@@ -44,7 +44,7 @@ namespace GitApi.Web.GitRepositorios
             
         }
 
-        public async Task<IList<RepositoriosResponse>> ObterRepositoriosPorNome(string nomeRepositorio)
+        public async Task<BuscaPorNomeResponse> ObterRepositoriosPorNome(string nomeRepositorio)
         {
             try
             {
@@ -55,7 +55,7 @@ namespace GitApi.Web.GitRepositorios
                 if (response.IsSuccessStatusCode)
                 {
                     retorno = await response.Content.ReadAsStringAsync();
-                    return await JsonConvert.DeserializeObjectAsync<IList<RepositoriosResponse>>(retorno);
+                    return await JsonConvert.DeserializeObjectAsync<BuscaPorNomeResponse>(retorno);
                 }
 
                 retorno = await response.Content.ReadAsStringAsync();
@@ -74,7 +74,7 @@ namespace GitApi.Web.GitRepositorios
 
         }
 
-        public async Task<RepositoriosResponse> ObterRepositorioPorNome(string nomeRepositorio)
+        public async Task<BuscaPorNomeResponse> ObterRepositorioPorNome(string nomeRepositorio)
         {
             try
             {
@@ -85,7 +85,7 @@ namespace GitApi.Web.GitRepositorios
                 if (response.IsSuccessStatusCode)
                 {
                     retorno = await response.Content.ReadAsStringAsync();
-                    return await JsonConvert.DeserializeObjectAsync<RepositoriosResponse>(retorno);
+                    return await JsonConvert.DeserializeObjectAsync<BuscaPorNomeResponse>(retorno);
                 }
 
                 retorno = await response.Content.ReadAsStringAsync();

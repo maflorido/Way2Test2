@@ -153,6 +153,7 @@
     <Compile Include="Exceptions\ObterRepositoriosUsuarioException.cs" />
     <Compile Include="GitRepositorios\GitClient.cs" />
     <Compile Include="GitRepositorios\GitRepositoriosConfig.cs" />
+    <Compile Include="GitRepositorios\Response\BuscaPorNomeResponse.cs" />
     <Compile Include="GitRepositorios\Response\ColaboradoresResponse.cs" />
     <Compile Include="GitRepositorios\Response\Error\ErrorResponse.cs" />
     <Compile Include="GitRepositorios\Response\Owner.cs" />
@@ -175,6 +176,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Views\Favoritos\Index.cshtml" />
+    <Content Include="Views\Repositorios\_ListagemRepositoriosNome.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />

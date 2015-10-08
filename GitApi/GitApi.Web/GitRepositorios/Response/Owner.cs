@@ -2,7 +2,7 @@
 {
     public class Owner
     {
-        public int Id;
+        public long Id;
         public string Login;
     }
 }

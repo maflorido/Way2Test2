@@ -37,8 +37,8 @@ namespace GitApi.Tests.GitRepositorios
             var resultados = await client.ObterRepositoriosPorNome("Way2Test2");
 
             Assert.IsNotNull(resultados);
-            Assert.AreEqual(1, resultados.Count);
-            Assert.AreEqual(resultados[0].Owner.Login, "maflorido");
+            Assert.AreEqual(1, resultados.Items.Count);
+            Assert.AreEqual(resultados.Items[0].Owner.Login, "maflorido");
         }
 
         [TestMethod]

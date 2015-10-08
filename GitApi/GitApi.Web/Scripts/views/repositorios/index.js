@@ -16,13 +16,17 @@
                 $("#resultado").html(data);
             });
         }        
-    });
+    });       
+});
+
+function registrarEventosListagem() {
+    $("#detalhes-repositorio").unbind("click", null);
 
     $("#detalhes-repositorio").click(function () {
         var nomeRepo = $(this).data("repositorio");
 
-        $.post("/Repositorios/Detalhes", { nome: nomeRepo }).success(function (data) {
+        $.post("/Repositorios/Detalhes", { nome: $(this).data("name"), login: $(this).data("login") }).success(function (data) {
             $("#resultado").html(data);
         });
     });
-});
+}

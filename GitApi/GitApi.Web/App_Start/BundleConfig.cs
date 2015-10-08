@@ -30,6 +30,9 @@ namespace GitApi.Web
             bundles.Add(new ScriptBundle("~/bundles/repositoriosIndex").Include(
                       "~/Scripts/views/repositorios/index.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/detalhes").Include(
+                      "~/Scripts/views/repositorios/repositorioDetalhes.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/framework").Include(
                       "~/Scripts/views/framework.js"));
         }
