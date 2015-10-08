@@ -8,16 +8,14 @@
 
 <h2>Painel de Repositórios</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm(new { @class="form-inline"}))
 {
-    <div class="form-group">
+    <div class="form-group form-inline">
         @Html.TextBoxFor(model => model.NomeRepositorio, new { @class = "form-control" })
         @Html.ValidationMessageFor(model => model.NomeRepositorio)
-    </div>
     
-    <div class="form-group">
-        <button type="button" id="btnBuscarNome" class="form-control">Buscar repositórios por nome</button><br /><br />
-        <button type="button" id="btnLstRepo" class="form-control">Listar meus repositórios</button>
+        <button type="button" class="btn-link" id="btnBuscarNome">Buscar repositórios por nome</button>
+        <button type="button" class="btn-link" id="btnLstRepo">Listar meus repositórios</button>
     </div>
     
 }

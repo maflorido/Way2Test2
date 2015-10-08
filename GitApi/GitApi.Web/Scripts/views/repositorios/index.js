@@ -4,6 +4,8 @@
     $("#btnLstRepo").click(function () {
         $.post("/Repositorios/ObterRepositoriosUsuario").success(function (data) {
             $("#resultado").html(data);
+        }).error(function () {
+            alert("Erro ao processar requisição!");
         });
     });
 
@@ -14,6 +16,8 @@
         {            
             $.post("/Repositorios/ObterRepositoriosNome", { NomeRepositorio: campoNome.val() }).success(function (data) {
                 $("#resultado").html(data);
+            }).error(function () {
+                alert("Erro ao processar requisição!");
             });
         }        
     });       
@@ -27,6 +31,8 @@ function registrarEventosListagem() {
 
         $.post("/Repositorios/Detalhes", { nome: $(this).data("name"), login: $(this).data("login") }).success(function (data) {
             $("#resultado").html(data);
+        }).error(function () {
+            alert("Erro ao processar requisição!");
         });
     });
 }

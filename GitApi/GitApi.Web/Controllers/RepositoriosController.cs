@@ -26,7 +26,7 @@ namespace GitApi.Web.Controllers
         public async Task<ActionResult> ObterRepositoriosUsuario()
         {
             var retorno = await gitClient.ObterRepositoriosUsuario();
-            
+
             return PartialView("_ListagemRepositorios", retorno);
         }
 
@@ -39,20 +39,14 @@ namespace GitApi.Web.Controllers
 
         public async Task<ActionResult> Detalhes(string nome, string login)
         {
-            try
-            {
-                var repositorios = await gitClient.ObterRepositorioPorNome(nome);
+            var repositorios = await gitClient.ObterRepositorioPorNome(nome);
 
-                var colaboradores = await gitClient.ObterColaboradoresRepositorio(login, nome);
+            var colaboradores = await gitClient.ObterColaboradoresRepositorio(login, nome);
 
-                DetalhesViewModel viewmodel = new DetalhesViewModel(colaboradores, repositorios.Items[0]);
+            DetalhesViewModel viewmodel = new DetalhesViewModel(colaboradores, repositorios.Items[0]);
 
-                return PartialView("_Detalhes", viewmodel);
-            }
-            catch(Exception ex)
-            {
-                throw ex;
-            }
+            return PartialView("_Detalhes", viewmodel);
+
         }
     }
 }
