@@ -59,7 +59,7 @@ namespace GitApi.Tests.GitRepositorios
             var resultado = await client.ObterRepositorioPorNome("Way2Test2");
 
             Assert.IsNotNull(resultado);
-            Assert.AreEqual(resultado.Owner.Login, "maflorido");
+            Assert.AreEqual(resultado.Items[0].Owner.Login, "maflorido");
         }
 
         [TestMethod]
