@@ -24,15 +24,19 @@
 });
 
 function registrarEventosListagem() {
-    $("#detalhes-repositorio").unbind("click", null);
+    $(".detalhes-repositorio").each(function () {
+        var botao = $(this);
 
-    $("#detalhes-repositorio").click(function () {
-        var nomeRepo = $(this).data("repositorio");
+        botao.unbind("click", null);
 
-        $.post("/Repositorios/Detalhes", { nome: $(this).data("name"), login: $(this).data("login") }).success(function (data) {
-            $("#resultado").html(data);
-        }).error(function () {
-            alert("Erro ao processar requisição!");
+        botao.click(function () {
+            var nomeRepo = $(this).data("repositorio");
+
+            $.post("/Repositorios/Detalhes", { nome: $(this).data("name"), login: $(this).data("login") }).success(function (data) {
+                $("#resultado").html(data);
+            }).error(function () {
+                alert("Erro ao processar requisição!");
+            });
         });
-    });
+    });    
 }
