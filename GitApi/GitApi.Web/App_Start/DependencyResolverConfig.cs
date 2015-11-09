@@ -20,7 +20,7 @@ namespace GitApi.Web
             builder.RegisterFilterProvider();
 
             builder.RegisterType<GitRepositoriosConfig>().AsSelf();
-            builder.RegisterType<GitClient>().AsSelf();
+            builder.RegisterType<GitClient>().AsImplementedInterfaces();
             builder.RegisterType<UnitOfWork>().AsSelf().InstancePerHttpRequest();
 
             var container = builder.Build();

@@ -11,9 +11,9 @@ namespace GitApi.Web.Controllers
 {
     public class RepositoriosController : Controller
     {
-        private readonly GitClient gitClient;
+        private readonly IGitClient gitClient;
 
-        public RepositoriosController(GitClient gitClient)
+        public RepositoriosController(IGitClient gitClient)
         {
             this.gitClient = gitClient;
         }

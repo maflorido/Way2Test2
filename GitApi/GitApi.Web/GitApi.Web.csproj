@@ -153,6 +153,7 @@
     <Compile Include="Exceptions\ObterRepositoriosUsuarioException.cs" />
     <Compile Include="GitRepositorios\GitClient.cs" />
     <Compile Include="GitRepositorios\GitRepositoriosConfig.cs" />
+    <Compile Include="GitRepositorios\IGitClient.cs" />
     <Compile Include="GitRepositorios\Response\BuscaPorNomeResponse.cs" />
     <Compile Include="GitRepositorios\Response\ColaboradoresResponse.cs" />
     <Compile Include="GitRepositorios\Response\Error\ErrorResponse.cs" />

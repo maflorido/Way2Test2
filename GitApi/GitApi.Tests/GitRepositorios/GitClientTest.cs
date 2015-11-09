@@ -11,7 +11,7 @@ namespace GitApi.Tests.GitRepositorios
         [TestMethod]
         public async void ObterRepositoriosUsuarioSuccess_Test()
         {
-            GitClient client = new GitClient();
+            IGitClient client = new GitClient();
 
             var resultados = await client.ObterRepositoriosUsuario();
 
@@ -24,7 +24,7 @@ namespace GitApi.Tests.GitRepositorios
         public async void ObterRepositoriosUsuarioError_Test()
         {
             GitRepositoriosConfig.NomeUsuario = "asasasasasassassassa";
-            GitClient client = new GitClient();
+            IGitClient client = new GitClient();
             
             var resultados = await client.ObterRepositoriosUsuario();            
         }
@@ -32,7 +32,7 @@ namespace GitApi.Tests.GitRepositorios
         [TestMethod]
         public async void ObterRepositoriosPorNomeSuccess_Test()
         {
-            GitClient client = new GitClient();
+            IGitClient client = new GitClient();
 
             var resultados = await client.ObterRepositoriosPorNome("Way2Test2");
 
@@ -45,7 +45,7 @@ namespace GitApi.Tests.GitRepositorios
         [ExpectedException(typeof(ObterPorNomeException))]
         public async void ObterRepositoriosPorNomeErro_Test()
         {
-            GitClient client = new GitClient();
+            IGitClient client = new GitClient();
 
             var resultados = await client.ObterRepositoriosPorNome("Way2Test2asasasasasasa");
             
@@ -54,7 +54,7 @@ namespace GitApi.Tests.GitRepositorios
         [TestMethod]
         public async void ObterRepositorioPorNomeSuccess_Test()
         {
-            GitClient client = new GitClient();
+            IGitClient client = new GitClient();
 
             var resultado = await client.ObterRepositorioPorNome("Way2Test2");
 
@@ -66,7 +66,7 @@ namespace GitApi.Tests.GitRepositorios
         [ExpectedException(typeof(ObterPorNomeException))]
         public async void ObterRepositorioPorNomeErro_Test()
         {
-            GitClient client = new GitClient();
+            IGitClient client = new GitClient();
 
             var resultado = await client.ObterRepositorioPorNome("Way2Test2asasasasasasa");
 
@@ -75,7 +75,7 @@ namespace GitApi.Tests.GitRepositorios
         [TestMethod]
         public async void ObterColaboradoresRepositorioSuccess_Test()
         {
-            GitClient client = new GitClient();
+            IGitClient client = new GitClient();
 
             var resultado = await client.ObterColaboradoresRepositorio("maflorido", "Way2Test2");
 
@@ -88,7 +88,7 @@ namespace GitApi.Tests.GitRepositorios
         [ExpectedException(typeof(ObterColaboradoresException))]
         public async void ObterColaboradoresRepositorioErro_Test()
         {
-            GitClient client = new GitClient();
+            IGitClient client = new GitClient();
 
             var resultado = await client.ObterColaboradoresRepositorio("maflorido", "Way2Test2asasasasasasa");
 

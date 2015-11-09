@@ -12,7 +12,7 @@ using System.Web;
 
 namespace GitApi.Web.GitRepositorios
 {
-    public class GitClient
+    public class GitClient: IGitClient
     {
         public async Task<IList<RepositoriosResponse>> ObterRepositoriosUsuario()
         {
