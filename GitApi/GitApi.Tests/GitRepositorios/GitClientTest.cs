@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using GitApi.Web.GitRepositorios;
 using GitApi.Web.Exceptions;
+using Moq;
 
 namespace GitApi.Tests.GitRepositorios
 {
@@ -10,7 +11,7 @@ namespace GitApi.Tests.GitRepositorios
     {
         [TestMethod]
         public async void ObterRepositoriosUsuarioSuccess_Test()
-        {
+        {            
             IGitClient client = new GitClient();
 
             var resultados = await client.ObterRepositoriosUsuario();
