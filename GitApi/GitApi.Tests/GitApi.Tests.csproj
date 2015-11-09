@@ -88,6 +88,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GitApi.Repository\GenericRepositoryTest.cs" />
     <Compile Include="GitRepositorios\GitClientTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -98,6 +99,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GitApi.Domain\GitApi.Domain.csproj">
+      <Project>{545eb1f3-bab8-4a1c-ba7c-90ea62434135}</Project>
+      <Name>GitApi.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GitApi.Repository\GitApi.Repository.csproj">
+      <Project>{d4ffdee1-0736-4e9e-b279-e4ddae2a35d9}</Project>
+      <Name>GitApi.Repository</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GitApi.Web\GitApi.Web.csproj">
       <Project>{B5A7FEEE-E301-4491-ACA3-0E8D85FBF7F9}</Project>
       <Name>GitApi.Web</Name>
